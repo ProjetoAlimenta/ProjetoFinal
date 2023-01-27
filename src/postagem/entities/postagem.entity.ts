@@ -23,11 +23,6 @@ import{Entity, PrimaryGeneratedColumn, Column, UpdateDateColumn, ManyToOne, Join
         @ApiProperty()
         texto: string
 
-        @IsNotEmpty()
-        @UpdateDateColumn() 
-        @ApiProperty()
-        data: Date
-
         @ApiProperty({ type: () => Tema})
         @ManyToOne(() => Tema, (tema) => tema.postagem, {
             onDelete: "CASCADE"
