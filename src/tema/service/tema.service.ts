@@ -33,18 +33,7 @@ export class TemaService {
     throw new HttpException('Tema não existe', HttpStatus.NOT_FOUND)
     return tema
 }
- 
-async findByDescricao(descricao: string): Promise<Tema[]> {
-    return await this.temaRepository.find({
-        where: {
-            descricao: ILike(`%${descricao}%`)
-        },
-         relations: {
-             postagem: true
-         }
-    })
- 
-}
+
 
 //Get temaPrincipal
 async findByTema(temaPrincipal:string): Promise<Tema[]>{
