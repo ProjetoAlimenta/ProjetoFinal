@@ -15,11 +15,6 @@ export class Tema {
     @ApiProperty()
     temaPrincipal: string
 
-    @IsNotEmpty()
-    @Column({length: 255, nullable:false})
-    @ApiProperty()
-    descricao: string
-
     @ApiProperty({ type: () => Postagem })
     @OneToMany(() => Postagem, (postagem) => postagem.tema)
     postagem: Postagem
