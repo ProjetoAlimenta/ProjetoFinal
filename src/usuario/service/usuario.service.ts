@@ -41,6 +41,14 @@ export class UsuarioService {
 
          return usuario
     }
+    
+        async findByNome(nome: string): Promise<Usuario | undefined> {
+        return await this.usuarioRepository.findOne({
+            where: {
+                nome: nome
+            }
+        })
+    }
 
     async create(usuario: Usuario): Promise<Usuario> {
         let buscarUsuario = await this.findByUsuario(usuario.usuario)
