@@ -1,7 +1,7 @@
 import { JwtAuthGuard } from './../../auth/guard/jwt-auth.guard';
 import { Usuario } from './../entities/usuario.entity';
 import { UsuarioService } from './../service/usuario.service';
-import { Body, Controller, Get, HttpCode, HttpStatus, Param, ParseIntPipe, Post, Put, UseGuards } from "@nestjs/common";
+import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, ParseIntPipe, Post, Put, UseGuards } from "@nestjs/common";
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 
 
