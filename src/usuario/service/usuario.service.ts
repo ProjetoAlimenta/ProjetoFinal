@@ -75,4 +75,13 @@ export class UsuarioService {
             usuario.senha = await this.bcrypt.criptografarSenha(usuario.senha)
             return await this.usuarioRepository.save(usuario)
     }
+    
+        async delete(id: number): Promise<DeleteResult> {
+        let buscarUsuario = await this.findById(id)
+
+        if(!buscarUsuario)
+            throw new HttpException('Usuario não encontrado', HttpStatus.NOT_FOUND)
+
+        return await this.usuarioRepository.delete(id)
+    }
 }
